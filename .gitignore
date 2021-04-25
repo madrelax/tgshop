@@ -102,8 +102,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+.env
 .venv
-*/.env
 env/
 venv/
 ENV/
@@ -127,5 +127,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-.idea/*
-.env
+.idea/$CACHE_FILE$
+.idea/.gitignore
+.idea/aiogram-bot-template.iml
+.idea/codeStyles/
+.idea/deployment.xml
+.idea/dictionaries
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vagrant.xml
+.idea/vcs.xml
