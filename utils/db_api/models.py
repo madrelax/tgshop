@@ -1,5 +1,7 @@
 from sqlalchemy import (Column, Integer, String, Sequence)
 from sqlalchemy import sql
+
+from utils.bin.bin import Bin
 from utils.db_api.database import db
 
 
@@ -32,3 +34,16 @@ class Item(db.Model):
         return f"""
 Товар № {self.id} - "{self.name}"
 Цена: {self.price}"""
+
+class User(db.Model):
+    __tablename__ = "users"
+    query: sql.Select
+
+    # Уникальный идентификатор товара
+    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+
+    # Телеграм id пользователя
+    tg_id = Column(String(9))
+
+    # корзина пользователя
+    bin = Column(Bin())
